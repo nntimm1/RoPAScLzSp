@@ -9,7 +9,7 @@ namespace RPSLS
         
         public Computer(string name1)
         {
-            this.Cname = "Ralph";
+            this.p2 = "";
         }
     }
 }

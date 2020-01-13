@@ -6,9 +6,9 @@ namespace RPSLS
 {
     public class Player : GamePlay
     {
-        public string Hname1;
-        public string Hname2;
-        public string Cname;
+        public string p1;
+        public string p2;
+        
 
      public Player()
         {
@@ -16,14 +16,14 @@ namespace RPSLS
         }
         public void PlayerSelect()
         {
-            Console.WriteLine("How Many Players Would You Like?");
+            Console.WriteLine("How many players are there?");
             int NumberofPlayers = int.Parse(Console.ReadLine());
             if (NumberofPlayers == 1)
             {
-                Console.WriteLine("Tell me your name?");
+                Console.WriteLine("Tell me your name:");
                 string name = Console.ReadLine();
-                this.Hname1 = name;
-                Console.WriteLine("Welcome to the game!\n \n Would you like the instructions? \n Press \n 1 for Yes \n 2 for No");
+                this.p1 = name;
+                Console.WriteLine("\n Welcome to the game " + p1 + "!\n \n Would you like the instructions? \n Press \n 1 for Yes \n 2 for No");
                 int needInstructions = int.Parse(Console.ReadLine());
                 if (needInstructions == 1)
                 {
@@ -31,7 +31,7 @@ namespace RPSLS
                 }
                 else
                 {
-
+                    // PLACEHOLDER FOR GAME PLAY METHOD
                 } 
 
             }
@@ -39,22 +39,32 @@ namespace RPSLS
             {
                 Console.WriteLine("Tell me your name?");
                 string name1 = Console.ReadLine();
-                this.Hname1 = name1;
-                Console.WriteLine("What is Player 2's name?");
+                this.p1 = name1;
+                Console.WriteLine("\n What is Player 2's name?");
                 string name = Console.ReadLine();
-                this.Hname2 = name;
-                Console.WriteLine("Okay Humanoids, time to battle it out. \n \n Would you like the instructions? \n Press \n 1 for Yes \n 2 for No");
-                string needInstructions = Console.ReadLine();
-
-            }
+                this.p2 = name;
+                Console.WriteLine("\n  Welcome to the game " +p1+ " and " +p2 + "!\n \n Would you like the instructions? \n Press \n 1 for Yes \n 2 for No");
+                int needInstructions = int.Parse(Console.ReadLine());
+                if (needInstructions == 1)
+                {
+                    InstructionPrint();
+                }
+                else
+                {
+                    Console.WriteLine("Okay Humanoids, time to battle it out.");
+                    // PLACEHOLDER FOR GAME PLAY METHOD
+                }
+                            }
             else if (NumberofPlayers >= 3)
             {
                 Console.WriteLine("Thats too many players, try again.");
+                PlayerSelect();
             }
             else
             {
-                Console.WriteLine("Bot showdown it is!");
-                this.Cname = "Ralph";
+                Console.WriteLine("We need 1 human to play silly! \n Try Again");
+                PlayerSelect();
+                
             }
 
             
