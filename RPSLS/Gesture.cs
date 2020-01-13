@@ -4,7 +4,8 @@ using System.Text;
 
 namespace RPSLS
 {
-    class Gesture
+    public class Gesture
     {
+               
     }
 }

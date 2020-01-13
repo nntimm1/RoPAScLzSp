@@ -4,7 +4,12 @@ using System.Text;
 
 namespace RPSLS
 {
-    class Computer
+    public class Computer : Player
     {
+        
+        public Computer(string name1)
+        {
+            this.Cname = "Ralph";
+        }
     }
 }
