@@ -8,19 +8,21 @@ namespace RPSLS
     {
         public string p1;
         public string p2;
-        
+        //public List<Gesture> gestures;
 
-     public Player()
-        {
+        //public Player()
+        //{
+        //    gestures = new List<Gesture>() { new Gesture("Rock"), new Gesture("Paper"), new Gesture("Scissors"), new Gesture("Lizard"), new Gesture("Spock") };
+        //}
 
-        }
+  
         public void PlayerSelect()
         {
-            Console.WriteLine("How many players are there?");
+            Console.WriteLine("WELCOME TO ROCK, PAPER SCISSORS, LIZARD, SPOCK\n          How many players are there?");
             int NumberofPlayers = int.Parse(Console.ReadLine());
             if (NumberofPlayers == 1)
             {
-                Console.WriteLine("Tell me your name:");
+                Console.WriteLine("          Tell me your name:");
                 string name = Console.ReadLine();
                 this.p1 = name;
                 Console.WriteLine("\n Welcome to the game " + p1 + "!\n \n Would you like the instructions? \n Press \n 1 for Yes \n 2 for No");
@@ -69,5 +71,6 @@ namespace RPSLS
 
             
         }
+        
     }
 }
