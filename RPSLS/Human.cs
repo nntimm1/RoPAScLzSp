@@ -12,5 +12,6 @@ namespace RPSLS
             this.p2 = name2;
            
         }
+
     }
 }

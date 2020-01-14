@@ -8,6 +8,10 @@ namespace RPSLS
         {
             Player NewGame = new Player();
             NewGame.PlayerSelect();
+            NewGame.Options();
+            
+            
+            
         }
     }
 }
