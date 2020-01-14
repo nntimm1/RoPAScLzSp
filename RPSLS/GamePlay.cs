@@ -6,7 +6,20 @@ namespace RPSLS
 {
     public class GamePlay
     {
-        Player player = new Player();
+        // Member variables
+
+        //Player player = new Player();
+        public int choice1;
+        public int choice2;
+
+      //Constructor
+
+        public GamePlay()
+        {
+            
+        }
+
+        // member methods
 
         public void InstructionPrint()
         {
@@ -18,7 +31,8 @@ namespace RPSLS
             int GoodOnInstructions = int.Parse(Console.ReadLine());
             if (GoodOnInstructions == 2)
             {
-                Console.WriteLine("\nHow much longer do you want to wait? Back to the begining with you!\n\n");
+                Console.WriteLine("\nHow much longer do you want to wait? " +
+                    "Back to the begining with you!\n\n");
                 player.PlayerSelect();
                                 
                 
@@ -26,18 +40,49 @@ namespace RPSLS
             else
             {
                 Console.WriteLine("\nGood Luck!\n");
-                
+                PickGesture1();
+
+
             }
 
 
         }
-        public void GameOn()
+        public void PickGesture1()
         {
-            Player.PickAGesture1();
-            Player.PickAGesture2();
+
+            Player player = new Player();
+            Console.WriteLine(player.p1 + "it's your turn. Make your move.");
+            foreach (string gesture in player.Gestures)
+            {
+                Console.WriteLine(gesture);
+            }
+            int Choice1 = int.Parse(Console.ReadLine());
+            int choice1 = Choice1;
+            Console.WriteLine("\n" + player.p2 + "it's your turn. Make your move.");
+            foreach (string gesture in player.Gestures)
+            {
+                Console.WriteLine(gesture);
+            }
+            int Choice2 = int.Parse(Console.ReadLine());
+            int choice2 = Choice2;
+
 
         }
-        
+        //public void PickGesture2()
+        //{
+
+        //    Player player = new Player();
+        //    Console.WriteLine(player.p2 + "it's your turn. Make your move.");
+        //    foreach (string gesture in player.Gestures)
+        //    {
+        //        Console.WriteLine(gesture);
+        //    }
+        //    int Choice2 = int.Parse(Console.ReadLine());
+        //    int choice2 = Choice2;
+
+        //}
+
+
 
     }
 }

@@ -6,12 +6,20 @@ namespace RPSLS
 {
     public class Human : Player
     {
+        // Member variables
+
+                 
+       //Constructor
+
         public Human(string name1, string name2)
         {
-            this.p1 = name1;
-            this.p2 = name2;
+            p1 = name1;
+            p2 = name2;
            
         }
+     
+
+        // member methods
 
     }
 }

@@ -6,12 +6,21 @@ namespace RPSLS
 {
     public class Computer : Player
     {
-        
+        // Member variables
+
+        Random random = new Random();
+
         public Computer(string name1)
         {
             this.p2 = "";
-            Random random = new Random();
         }
+        
+        //Constructor
+
+
+
+
+        // member methods
         public Computer()
         {
             

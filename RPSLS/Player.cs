@@ -6,12 +6,24 @@ namespace RPSLS
 {
     public class Player : GamePlay
     {
-        
+        // Member variables
+
         public string p1;
         public string p2;
+        public int score;
+        int pickedGesture1;
+        int pickedGesture2;
+
         public List<string> Gestures = new List<string>() { " 1=Rock", "2=Paper", "3=Scissors", "4=Lizard", "5=Spock", };
-        
-  
+
+
+        //Constructor
+
+        public Player()
+        {
+        }
+
+        // member methods
         public void PlayerSelect()
         {
             Console.WriteLine("WELCOME TO ROCK, PAPER SCISSORS, LIZARD, SPOCK\n          How many players are there? \n");
@@ -30,7 +42,7 @@ namespace RPSLS
                 }
                 else
                 {
-                    // PLACEHOLDER FOR GAME PLAY METHOD
+                    PickGesture1();
                 } 
 
             }
@@ -51,7 +63,9 @@ namespace RPSLS
                 else
                 {
                     Console.WriteLine("Okay Humanoids, time to battle it out.");
-                    // PLACEHOLDER FOR GAME PLAY METHOD
+                    PickGesture1();
+
+
                 }
                             }
             else if (NumberofPlayers >= 3)
@@ -65,32 +79,8 @@ namespace RPSLS
                 PlayerSelect();
                 
             }
-
-            
+                        
         }
-        public void PickAGesture1()
-        {
-            Console.WriteLine(p1 + "it's your turn. Make your move.");
-            Options();
-            int choice1 = int.Parse(Console.ReadLine());
-            int Choice1 = choice1;
-        }
-        public void PickAGesture2()
-        {
-            Console.WriteLine(p2 + "it's your turn. Make your move.");
-            Options();
-            int choice2 = int.Parse(Console.ReadLine());
-            int Choice2 = choice2;
-        }
-        public void Options()
-        {
-            foreach (string gesture in Gestures)
-            {
-                Console.WriteLine(gesture);
-            }
-        }
-
-
-        
+              
     }
 }
