@@ -15,9 +15,14 @@ namespace RPSLS
         {
             this.name = name;           
         }
-     
+
 
         // member methods
+        public override void PickGesture()
+        {
+            base.PickGesture();
+            pickedGesture = int.Parse(Console.ReadLine());
+        }
 
     }
 }

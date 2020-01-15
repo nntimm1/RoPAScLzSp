@@ -27,6 +27,8 @@ namespace RPSLS
         {
             InstructionPrint();
             PlayerSelect();
+            player1.PickGesture();
+            player2.PickGesture();
 
             
 
@@ -94,6 +96,11 @@ namespace RPSLS
                 Console.WriteLine("We need 1 human to play silly! \n Try Again\n");
                 PlayerSelect();
             }
+
+        }
+
+        public void Compare()
+        {
 
         }
         //public void PickGesture1()

@@ -12,7 +12,7 @@ namespace RPSLS
         public int score;
         public int pickedGesture;
 
-        public List<string> Gestures = new List<string>() { " 1=Rock", "2=Paper", "3=Scissors", "4=Lizard", "5=Spock", };
+        public List<string> Gestures = new List<string>() { " 1=Rock", " 2=Paper", " 3=Scissors", " 4=Lizard", " 5=Spock", };
 
 
         //Constructor
@@ -27,13 +27,22 @@ namespace RPSLS
         public virtual void PickGesture()
         {
 
-            Console.WriteLine(this.name + "it's your turn. Pick your move.");
+            Console.WriteLine(this.name + " it's your turn. Pick your move.");
             foreach (string gesture in Gestures)
             {
                 Console.WriteLine(gesture);
             }
-            pickedGesture = int.Parse(Console.ReadLine());
-        }
+            
+        
+       }
+        //public virtual void PlayerScore()
+        //{
+        //    foreach (Player in Player)
+        //    {
+        //        Console.WriteLine(score);
+        //    }
+        //    scoreTotal = int.pares(Console.ReadLine());
+        //}
 
      
         //public void PlayerSelect()

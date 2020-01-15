@@ -20,7 +20,12 @@ namespace RPSLS
 
 
         // member methods
-        
-    
+        public override void PickGesture()
+        {
+            base.PickGesture();
+            pickedGesture = random.Next(1, 6);
+            Console.WriteLine(pickedGesture);
+        }
+
     }
 }
