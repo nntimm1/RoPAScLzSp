@@ -62,7 +62,7 @@ namespace RPSLS
             // player2 should be instantiated as a human or comnputer
 
             player1 = new Human("");
-            player2 = new Computer();
+            
 
             Console.WriteLine("How many players are there? \n");
             int NumberofPlayers = int.Parse(Console.ReadLine());
@@ -73,11 +73,11 @@ namespace RPSLS
                 string player = player2.name;
 
                 Console.WriteLine("\n Welcome to the game " + player1.name + "!\n My name is " + player2.name + " and I am going to take you down! \n");
-                
+                player2 = new Computer();
               
             }
             else if (NumberofPlayers == 2)
-            {
+            {   player2 = new Human("");
                 Console.WriteLine("Great! What is player 1's name?");
                 player1.name = Console.ReadLine();
                 
@@ -114,22 +114,15 @@ namespace RPSLS
                     {
                         Console.WriteLine(player1.name + " Wins this round!");
                         player1.score++;
-
                     }
                     else if (player1.pickedGesture == 1 && player2.pickedGesture == 1)
                     {
-
                         Console.WriteLine("It's a tie, Try again");
-
-
-                        player2.score++;
-
                     }
                     else
                     {
-                        Console.WriteLine(player2.name + "Wins this round!");
+                        Console.WriteLine(player2.name + " Wins this round!");
                         player2.score++;
-
                     }
                     break;
                 case 2:
@@ -140,15 +133,11 @@ namespace RPSLS
                     }
                     else if (player1.pickedGesture == player2.pickedGesture)
                     {
-
                         Console.WriteLine("It's a tie, Try again");
-
-                        Console.WriteLine(player2.name + "Wins this round!");
-                        player2.score++;
                     }
                     else
                     {
-                        Console.WriteLine(player2.name + "Wins this round!");
+                        Console.WriteLine(player2.name + " Wins this round!");
                         player2.score++;
                     }
                     break;
@@ -160,15 +149,11 @@ namespace RPSLS
                     }
                     else if (player1.pickedGesture == player2.pickedGesture)
                     {
-
                         Console.WriteLine("It's a tie, Try again");
-
-                        Console.WriteLine(player2.name + "Wins this round!");
-                        player2.score++;
                     }
                     else
                     {
-                        Console.WriteLine(player2.name + "Wins this round!");
+                        Console.WriteLine(player2.name + " Wins this round!");
                         player2.score++;
                     }
                     break;
@@ -180,15 +165,11 @@ namespace RPSLS
                     }
                     else if (player1.pickedGesture == player2.pickedGesture)
                     {
-
                         Console.WriteLine("It's a tie, Try again");
-
-                        Console.WriteLine(player2.name + "Wins this round!");
-                        player2.score++;
                     }
                     else
                     {
-                        Console.WriteLine(player2.name + "Wins this round!");
+                        Console.WriteLine(player2.name + " Wins this round!");
                         player2.score++;
                     }
                     break;
@@ -202,13 +183,10 @@ namespace RPSLS
                     {
 
                         Console.WriteLine("It's a tie, Try again");
-
-                        Console.WriteLine(player2.name + "Wins this round!");
-                        player2.score++;
                     }
                     else
                     {
-                        Console.WriteLine(player2.name + "Wins this round!");
+                        Console.WriteLine(player2.name + " Wins this round!");
                         player2.score++;
                     }
                     break;
