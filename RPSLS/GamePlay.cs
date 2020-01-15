@@ -11,11 +11,15 @@ namespace RPSLS
         Player player2;
 
         public int choice1;
-       
-        
+
+        public List<int> RockBeats = new List<int>() { 3, 4, };
+        public List<int> PaperBeats = new List<int>() { 1, 5, };
+        public List<int> ScissorsBeats = new List<int>() { 2, 4, };
+        public List<int> LizardBeats = new List<int>() { 5, 2, };
+        public List<int> SpockBeats = new List<int>() { 3, 1, };
 
         //Constructor
-
+        
         public GamePlay()
         {
             
@@ -29,11 +33,8 @@ namespace RPSLS
             PlayerSelect();
             player1.PickGesture();
             player2.PickGesture();
-
+            RoundResult();
             
-
-
-
         }
 
         public void InstructionPrint()
@@ -99,10 +100,134 @@ namespace RPSLS
 
         }
 
-        public void Compare()
+        public void ScoreCheck()
         {
-
+             
         }
+
+        public void RoundResult()
+        {
+            switch (player1.pickedGesture)
+            {
+                case 1:
+                    if (player1.pickedGesture == 1 && RockBeats.Contains(player2.pickedGesture))
+                    {
+                        Console.WriteLine(player1.name + " Wins this round!");
+                        player1.score++;
+
+                    }
+                    else if (player1.pickedGesture == 1 && player2.pickedGesture == 1)
+                    {
+
+                        Console.WriteLine("It's a tie, Try again");
+
+
+                        player2.score++;
+
+                    }
+                    else
+                    {
+                        Console.WriteLine(player2.name + "Wins this round!");
+                        player2.score++;
+
+                    }
+                    break;
+                case 2:
+                    if (player1.pickedGesture == 2 && PaperBeats.Contains(player2.pickedGesture))
+                    {
+                        Console.WriteLine(player1.name + " Wins this round!");
+                        player1.score++;
+                    }
+                    else if (player1.pickedGesture == player2.pickedGesture)
+                    {
+
+                        Console.WriteLine("It's a tie, Try again");
+
+                        Console.WriteLine(player2.name + "Wins this round!");
+                        player2.score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine(player2.name + "Wins this round!");
+                        player2.score++;
+                    }
+                    break;
+                case 3:
+                    if (player1.pickedGesture == 3 && ScissorsBeats.Contains(player2.pickedGesture))
+                    {
+                        Console.WriteLine(player1.name + " Wins this round!");
+                        player1.score++;
+                    }
+                    else if (player1.pickedGesture == player2.pickedGesture)
+                    {
+
+                        Console.WriteLine("It's a tie, Try again");
+
+                        Console.WriteLine(player2.name + "Wins this round!");
+                        player2.score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine(player2.name + "Wins this round!");
+                        player2.score++;
+                    }
+                    break;
+                case 4:
+                    if (player1.pickedGesture == 4 && LizardBeats.Contains(player2.pickedGesture))
+                    {
+                        Console.WriteLine(player1.name + " Wins this round!");
+                        player1.score++;
+                    }
+                    else if (player1.pickedGesture == player2.pickedGesture)
+                    {
+
+                        Console.WriteLine("It's a tie, Try again");
+
+                        Console.WriteLine(player2.name + "Wins this round!");
+                        player2.score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine(player2.name + "Wins this round!");
+                        player2.score++;
+                    }
+                    break;
+                case 5:
+                    if (player1.pickedGesture == 5 && SpockBeats.Contains(player2.pickedGesture))
+                    {
+                        Console.WriteLine(player1.name + " Wins this round!");
+                        player1.score++;
+                    }
+                    else if (player1.pickedGesture == player2.pickedGesture)
+                    {
+
+                        Console.WriteLine("It's a tie, Try again");
+
+                        Console.WriteLine(player2.name + "Wins this round!");
+                        player2.score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine(player2.name + "Wins this round!");
+                        player2.score++;
+                    }
+                    break;
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         //public void PickGesture1()
         //{
 

@@ -19,7 +19,8 @@ namespace RPSLS
 
         public Player()
         {
-            
+            score = 0;
+
         }
 
         // member methods
