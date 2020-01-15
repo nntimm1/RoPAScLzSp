@@ -7,11 +7,11 @@ namespace RPSLS
     public class GamePlay
     {
         // Member variables
-
-        
-        public int choice1;
         Player player1;
         Player player2;
+
+        public int choice1;
+       
         
 
         //Constructor
@@ -46,13 +46,10 @@ namespace RPSLS
                 Console.WriteLine("\nHow much longer do you want to wait? " +
                     "Back to the begining with you!\n\n");
                 RunGame();
-                                
-                
             }
             else
             {
                 Console.WriteLine("\nGood Luck!\n");
-                
             }
         }
 
@@ -60,17 +57,19 @@ namespace RPSLS
         {
             // somewhere in here
             // player2 should be instantiated as a human or comnputer
+
+            player1 = new Human("");
+            player2 = new Computer();
+
             Console.WriteLine("How many players are there? \n");
             int NumberofPlayers = int.Parse(Console.ReadLine());
             if (NumberofPlayers == 1) 
             {
-                player1 = new Human();
-                player2 = new Computer();
                 Console.WriteLine("          Tell me your name:");
                 player1.name = Console.ReadLine();
-                player2.name = Console.ReadLine();
+                string player = player2.name;
 
-                Console.WriteLine("\n Welcome to the game " + player1 + "!\n My name is " + player2 + " and I am going to take you down! \n");
+                Console.WriteLine("\n Welcome to the game " + player1.name + "!\n My name is " + player2.name + " and I am going to take you down! \n");
                 
               
             }
@@ -82,7 +81,7 @@ namespace RPSLS
                 Console.WriteLine("\n And what is Player 2's name?");
                 player2.name = Console.ReadLine();
                 
-                Console.WriteLine("\n  Welcome to the game " + player1 + " and " + player2 + "!");
+                Console.WriteLine("\n  Welcome to the game " + player1.name + " and " + player2.name + "!");
                 
             }
             else if (NumberofPlayers >= 3)
