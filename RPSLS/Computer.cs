@@ -10,20 +10,17 @@ namespace RPSLS
 
         Random random = new Random();
 
-        public Computer(string name1)
-        {
-            this.p2 = "";
-        }
-        
+
         //Constructor
 
-
+        public Computer()
+        {
+            this.name = "Merlin";
+        }
 
 
         // member methods
-        public Computer()
-        {
-            
-        }
+        
+    
     }
 }

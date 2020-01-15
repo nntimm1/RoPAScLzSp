@@ -4,18 +4,16 @@ using System.Text;
 
 namespace RPSLS
 {
-    public class Human : Player
+    public class Human : Player // inheritance (IS A TYPE OF)
     {
-        // Member variables
+        // Member variables (HAS A)
 
                  
        //Constructor
 
-        public Human(string name1, string name2)
+        public Human(string name)
         {
-            p1 = name1;
-            p2 = name2;
-           
+            this.name = name;           
         }
      
 

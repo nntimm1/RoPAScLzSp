@@ -6,10 +6,9 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
-            Player NewGame = new Player();
-            NewGame.PlayerSelect();
-            
-            
+            GamePlay NewGame = new GamePlay();
+            NewGame.RunGame();
+
             
             
         }

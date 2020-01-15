@@ -8,24 +8,36 @@ namespace RPSLS
     {
         // Member variables
 
-        //Player player = new Player();
+        
         public int choice1;
-        public int choice2;
+        Player player1;
+        Player player2;
+        
 
-      //Constructor
+        //Constructor
 
         public GamePlay()
         {
             
         }
 
-        // member methods
+        // member methods (CAN DO)
+
+        public void RunGame() // master method
+        {
+            InstructionPrint();
+            PlayerSelect();
+
+            
+
+
+
+        }
 
         public void InstructionPrint()
         {
-
-            Player player = new Player();
-            Console.WriteLine("\n Here are the Instructions:");
+            Console.WriteLine("          WELCOME TO ROCK, PAPER SCISSORS, LIZARD, SPOCK\n"); 
+            Console.WriteLine("\n           Here are the Instructions:");
             Console.WriteLine("\n *Rock crushes Scissors \n *Scissors cuts Paper \n *Paper covers Rock \n *Rock crushes Lizard \n *Lizard poisons Spock \n *Spock smashes Scissors \n *Scissors decapitates Lizard \n *Lizard eats Paper \n *Paper disproves Spock \n *Spock vaporizes Rock");
             Console.WriteLine("\n Ready to play? Press \n 1 for Yes \n 2 for No");
             int GoodOnInstructions = int.Parse(Console.ReadLine());
@@ -33,41 +45,79 @@ namespace RPSLS
             {
                 Console.WriteLine("\nHow much longer do you want to wait? " +
                     "Back to the begining with you!\n\n");
-                player.PlayerSelect();
+                RunGame();
                                 
                 
             }
             else
             {
                 Console.WriteLine("\nGood Luck!\n");
-                PickGesture1();
-
-
+                
             }
-
-
         }
-        public void PickGesture1()
+
+        public void PlayerSelect()
         {
-
-            Player player = new Player();
-            Console.WriteLine(player.p1 + "it's your turn. Make your move.");
-            foreach (string gesture in player.Gestures)
+            // somewhere in here
+            // player2 should be instantiated as a human or comnputer
+            Console.WriteLine("How many players are there? \n");
+            int NumberofPlayers = int.Parse(Console.ReadLine());
+            if (NumberofPlayers == 1) 
             {
-                Console.WriteLine(gesture);
-            }
-            int Choice1 = int.Parse(Console.ReadLine());
-            int choice1 = Choice1;
-            Console.WriteLine("\n" + player.p2 + "it's your turn. Make your move.");
-            foreach (string gesture in player.Gestures)
-            {
-                Console.WriteLine(gesture);
-            }
-            int Choice2 = int.Parse(Console.ReadLine());
-            int choice2 = Choice2;
+                player1 = new Human();
+                player2 = new Computer();
+                Console.WriteLine("          Tell me your name:");
+                player1.name = Console.ReadLine();
+                player2.name = Console.ReadLine();
 
+                Console.WriteLine("\n Welcome to the game " + player1 + "!\n My name is " + player2 + " and I am going to take you down! \n");
+                
+              
+            }
+            else if (NumberofPlayers == 2)
+            {
+                Console.WriteLine("Great! What is player 1's name?");
+                player1.name = Console.ReadLine();
+                
+                Console.WriteLine("\n And what is Player 2's name?");
+                player2.name = Console.ReadLine();
+                
+                Console.WriteLine("\n  Welcome to the game " + player1 + " and " + player2 + "!");
+                
+            }
+            else if (NumberofPlayers >= 3)
+            {
+                Console.WriteLine("Thats too many players, try again.\n");
+                PlayerSelect();
+            }
+            else
+            {
+                Console.WriteLine("We need 1 human to play silly! \n Try Again\n");
+                PlayerSelect();
+            }
 
         }
+        //public void PickGesture1()
+        //{
+
+
+        //    Console.WriteLine(player1.name + "it's your turn. Pick your move.");
+        //    foreach (string gesture in player.Gestures)
+        //    {
+        //        Console.WriteLine(gesture);
+        //    }
+        //    int Choice1 = int.Parse(Console.ReadLine());
+        //    int choice1 = Choice1;
+        //    Console.WriteLine("\n" + player.player2 + "it's your turn. Pick your move.");
+        //    foreach (string gesture in player.Gestures)
+        //    {
+        //        Console.WriteLine(gesture);
+        //    }
+        //    int Choice2 = int.Parse(Console.ReadLine());
+        //    int choice2 = Choice2;
+
+
+        //}
         //public void PickGesture2()
         //{
 
