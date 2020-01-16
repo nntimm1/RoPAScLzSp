@@ -31,10 +31,16 @@ namespace RPSLS
         {
             InstructionPrint();
             PlayerSelect();
-            player1.PickGesture();
-            player2.PickGesture();
-            RoundResult();
-            
+            do
+            {
+                player1.PickGesture();
+                player2.PickGesture();
+                RoundResult();
+                ScoreDisplay();
+            }
+            while ((player1.score <= 2 ) && (player2.score <= 2));
+            AnnounceWinner();
+
         }
 
         public void InstructionPrint()
@@ -61,8 +67,8 @@ namespace RPSLS
             // somewhere in here
             // player2 should be instantiated as a human or comnputer
 
-            player1 = new Human("");
-            
+            player1 = new Human(" ");
+            player2 = new Computer();
 
             Console.WriteLine("How many players are there? \n");
             int NumberofPlayers = int.Parse(Console.ReadLine());
@@ -77,7 +83,7 @@ namespace RPSLS
               
             }
             else if (NumberofPlayers == 2)
-            {   player2 = new Human("");
+            {   player2 = new Human(" ");
                 Console.WriteLine("Great! What is player 1's name?");
                 player1.name = Console.ReadLine();
                 
@@ -100,10 +106,7 @@ namespace RPSLS
 
         }
 
-        public void ScoreCheck()
-        {
-             
-        }
+      
 
         public void RoundResult()
         {
@@ -112,81 +115,81 @@ namespace RPSLS
                 case 1:
                     if (player1.pickedGesture == 1 && RockBeats.Contains(player2.pickedGesture))
                     {
-                        Console.WriteLine(player1.name + " Wins this round!");
+                        Console.WriteLine("\n" + player1.name + " Wins this round!");
                         player1.score++;
                     }
                     else if (player1.pickedGesture == 1 && player2.pickedGesture == 1)
                     {
-                        Console.WriteLine("It's a tie, Try again");
+                        Console.WriteLine("\n It's a tie, Try again");
                     }
                     else
                     {
-                        Console.WriteLine(player2.name + " Wins this round!");
+                        Console.WriteLine("\n" + player2.name + " Wins this round!");
                         player2.score++;
                     }
                     break;
                 case 2:
                     if (player1.pickedGesture == 2 && PaperBeats.Contains(player2.pickedGesture))
                     {
-                        Console.WriteLine(player1.name + " Wins this round!");
+                        Console.WriteLine("\n" + player1.name + " Wins this round!");
                         player1.score++;
                     }
                     else if (player1.pickedGesture == player2.pickedGesture)
                     {
-                        Console.WriteLine("It's a tie, Try again");
+                        Console.WriteLine("\n It's a tie, Try again");
                     }
                     else
                     {
-                        Console.WriteLine(player2.name + " Wins this round!");
+                        Console.WriteLine("\n" + player2.name + " Wins this round!");
                         player2.score++;
                     }
                     break;
                 case 3:
                     if (player1.pickedGesture == 3 && ScissorsBeats.Contains(player2.pickedGesture))
                     {
-                        Console.WriteLine(player1.name + " Wins this round!");
+                        Console.WriteLine("\n" + player1.name + " Wins this round!");
                         player1.score++;
                     }
                     else if (player1.pickedGesture == player2.pickedGesture)
                     {
-                        Console.WriteLine("It's a tie, Try again");
+                        Console.WriteLine("\n It's a tie, Try again");
                     }
                     else
                     {
-                        Console.WriteLine(player2.name + " Wins this round!");
+                        Console.WriteLine("\n" + player2.name + " Wins this round!");
                         player2.score++;
                     }
                     break;
                 case 4:
                     if (player1.pickedGesture == 4 && LizardBeats.Contains(player2.pickedGesture))
                     {
-                        Console.WriteLine(player1.name + " Wins this round!");
+                        Console.WriteLine("\n" + player1.name + " Wins this round!");
                         player1.score++;
                     }
                     else if (player1.pickedGesture == player2.pickedGesture)
                     {
-                        Console.WriteLine("It's a tie, Try again");
+                        Console.WriteLine("\n It's a tie, Try again");
                     }
                     else
                     {
-                        Console.WriteLine(player2.name + " Wins this round!");
+                        Console.WriteLine("\n" + player2.name + " Wins this round!");
                         player2.score++;
                     }
                     break;
                 case 5:
                     if (player1.pickedGesture == 5 && SpockBeats.Contains(player2.pickedGesture))
                     {
-                        Console.WriteLine(player1.name + " Wins this round!");
+                        Console.WriteLine("\n" + player1.name + " Wins this round!");
                         player1.score++;
                     }
                     else if (player1.pickedGesture == player2.pickedGesture)
                     {
 
-                        Console.WriteLine("It's a tie, Try again");
+                        Console.WriteLine("\n It's a tie, Try again");
                     }
                     else
                     {
-                        Console.WriteLine(player2.name + " Wins this round!");
+                        Console.WriteLine("\n" + player2.name + " Wins this round!");
                         player2.score++;
                     }
                     break;
@@ -194,8 +197,23 @@ namespace RPSLS
             }
         }
 
+        public void AnnounceWinner()
+        {
+            if (player1.score == 3)
+            {
+                Console.WriteLine("\n" + player1.name + " WINS!");
+            }
+            else if (player2.score ==3)
+            {
+                Console.WriteLine("\n" +player2.name + " WINS!");
+            }
+        }
 
-
+        public void ScoreDisplay()
+        {
+            Console.WriteLine("\n" + player1.name + " " + player1.score);
+            Console.WriteLine(player2.name + " " + player2.score + "\n");
+        }
 
 
 
