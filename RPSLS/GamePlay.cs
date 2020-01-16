@@ -10,8 +10,6 @@ namespace RPSLS
         Player player1;
         Player player2;
 
-        public int choice1;
-
         public List<int> RockBeats = new List<int>() { 3, 4, };
         public List<int> PaperBeats = new List<int>() { 1, 5, };
         public List<int> ScissorsBeats = new List<int>() { 2, 4, };
@@ -24,6 +22,7 @@ namespace RPSLS
         {
             
         }
+       
 
         // member methods (CAN DO)
 
@@ -56,17 +55,15 @@ namespace RPSLS
                     "Back to the begining with you!\n\n");
                 RunGame();
             }
-            else
+            else 
             {
                 Console.WriteLine("\nGood Luck!\n");
             }
+                       
         }
 
         public void PlayerSelect()
         {
-            // somewhere in here
-            // player2 should be instantiated as a human or comnputer
-
             player1 = new Human(" ");
             player2 = new Computer();
 
@@ -202,10 +199,30 @@ namespace RPSLS
             if (player1.score == 3)
             {
                 Console.WriteLine("\n" + player1.name + " WINS!");
+                Console.WriteLine("\n Want to play again? \n 1 Yes \n 2 No");
+                int playagain = int.Parse(Console.ReadLine());
+                if (playagain == 1)
+                {
+                    RunGame();
+                }
+                else
+                {
+                    Console.WriteLine("\n Thanks for playing, have a good day! \n ");
+                }
             }
             else if (player2.score ==3)
             {
-                Console.WriteLine("\n" +player2.name + " WINS!");
+                Console.WriteLine("\n" +player2.name + " WINS! \n ");
+                Console.WriteLine("\nWant to play again? \n 1 Yes \n 2 No");
+                int playagain = int.Parse(Console.ReadLine());
+                if (playagain == 1)
+                {
+                    RunGame();
+                }
+                else
+                {
+                    Console.WriteLine("\n Thanks for playing, have a good day! \n");
+                }
             }
         }
 
@@ -214,52 +231,6 @@ namespace RPSLS
             Console.WriteLine("\n" + player1.name + " " + player1.score);
             Console.WriteLine(player2.name + " " + player2.score + "\n");
         }
-
-
-
-
-
-
-
-
-
-
-        //public void PickGesture1()
-        //{
-
-
-        //    Console.WriteLine(player1.name + "it's your turn. Pick your move.");
-        //    foreach (string gesture in player.Gestures)
-        //    {
-        //        Console.WriteLine(gesture);
-        //    }
-        //    int Choice1 = int.Parse(Console.ReadLine());
-        //    int choice1 = Choice1;
-        //    Console.WriteLine("\n" + player.player2 + "it's your turn. Pick your move.");
-        //    foreach (string gesture in player.Gestures)
-        //    {
-        //        Console.WriteLine(gesture);
-        //    }
-        //    int Choice2 = int.Parse(Console.ReadLine());
-        //    int choice2 = Choice2;
-
-
-        //}
-        //public void PickGesture2()
-        //{
-
-        //    Player player = new Player();
-        //    Console.WriteLine(player.p2 + "it's your turn. Make your move.");
-        //    foreach (string gesture in player.Gestures)
-        //    {
-        //        Console.WriteLine(gesture);
-        //    }
-        //    int Choice2 = int.Parse(Console.ReadLine());
-        //    int choice2 = Choice2;
-
-        //}
-
-
 
     }
 }
