@@ -11,6 +11,7 @@ namespace RPSLS
         public string name;
         public int score;
         public int pickedGesture;
+        public int itsA_Tie;
 
         public List<string> Gestures = new List<string>() { " 1=Rock", " 2=Paper", " 3=Scissors", " 4=Lizard", " 5=Spock", };
 
@@ -20,20 +21,18 @@ namespace RPSLS
         public Player()
         {
             score = 0;
-
+            itsA_Tie = 0;
         }
 
         // member methods
 
         public virtual void PickGesture()
         {
-
             Console.WriteLine(this.name + " it's your turn. Pick your move.");
             foreach (string gesture in Gestures)
             {
                 Console.WriteLine(gesture);
             }
-        
         }
        
     }

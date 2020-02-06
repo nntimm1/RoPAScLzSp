@@ -21,7 +21,17 @@ namespace RPSLS
         public override void PickGesture()
         {
             base.PickGesture();
-            pickedGesture = int.Parse(Console.ReadLine());
+            pickedGesture = 0;
+            try
+            {
+                pickedGesture = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("That is not a valid entry, try again");
+                pickedGesture = int.Parse(Console.ReadLine());
+            }
         }
 
     }
